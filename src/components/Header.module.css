@@ -1,0 +1,221 @@
+/* Page top background like screenshot */
+.header {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 16px 0 24px;
+  background: transparent;
+}
+
+/* Main white pill container (desktop) */
+.shell {
+  width: min(1400px, 100% - 32px);
+  background: #ffffff;
+  border-radius: 999px;
+  padding: 10px 18px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  box-shadow: 0 18px 40px rgba(15, 23, 42, 0.12);
+}
+
+/* Top row: logo + hamburger */
+.topRow {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 16px;
+}
+
+/* Brand left */
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logoCircle {
+  width: 34px;
+  height: 34px;
+  border-radius: 999px;
+  background: #111827;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 16px;
+}
+
+.brandName {
+  font-weight: 600;
+  font-size: 16px;
+  color: #111827;
+}
+
+/* Logo image */
+.logoImg {
+  width: 126px;
+  height: 66px;
+  object-fit: contain;
+  padding: 6px;
+}
+
+/* Center nav (desktop) */
+.nav {
+  display: flex;
+  justify-content: center;
+  flex: 1;
+  gap: 12px;
+}
+
+.navItem {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 0px 16px;
+  font-size: 14px;
+  font-weight: 500;
+  color: #333;
+  text-decoration: none;
+  transition:
+    background 0.2s ease,
+    box-shadow 0.2s ease,
+    transform 0.15s ease,
+    border-color 0.2s ease;
+}
+
+.activeNavItem {
+  color: #EC2028;
+  text-decoration: underline;
+  font-weight: 700;
+}
+
+.navItem:hover {
+  transform: translateY(-1px);
+}
+
+.navIcon {
+  font-size: 16px;
+}
+
+/* Right CTA button */
+.cta {
+  border: none;
+  outline: none;
+  cursor: pointer;
+  border-radius: 999px;
+  padding: 10px 20px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  color: #ffffff;
+  background: linear-gradient(135deg, #EC2028, #F74A50);
+  box-shadow: 0 12px 26px rgba(236, 32, 40, 0.4);
+  transition:
+    transform 0.15s ease,
+    box-shadow 0.15s ease,
+    filter 0.15s ease;
+}
+
+.cta:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 16px 32px rgba(236, 32, 40, 0.4);
+  filter: brightness(1.03);
+}
+
+.ctaArrow {
+  font-size: 16px;
+}
+
+.navSpl {
+  text-decoration: none;
+  color: #fff;
+}
+
+/* Hamburger button (hidden on desktop) */
+.menuToggle {
+  display: none;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  padding: 6px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 4px;
+}
+
+.menuToggle span {
+  display: block;
+  width: 20px;
+  height: 2px;
+  background: #111827;
+  border-radius: 999px;
+}
+
+/* ---------- Responsive tweaks ---------- */
+@media (max-width: 768px) {
+  /* Remove oval + shadow on mobile */
+  .shell {
+    width: 100%;
+    border-radius: 0;
+    box-shadow: none;
+    padding: 10px 12px;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 8px;
+  }
+
+  .topRow {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  /* Show hamburger on mobile */
+  .menuToggle {
+    display: inline-flex;
+  }
+
+  /* Nav: hidden by default, dropdown when open */
+  .nav {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    margin-top: 8px;
+    border-top: 1px solid #e5e7eb;
+    padding-top: 8px;
+  }
+
+  .navOpen {
+    display: flex;
+    padding-left: 15px;
+  }
+
+  .navItem,
+  .activeNavItem {
+    padding: 8px 0;
+  }
+
+  /* CTA full width under nav when open */
+  .cta {
+    display: none;
+    width: 100%;
+    justify-content: center;
+    margin-top: 8px;
+    border-radius: 999px;
+  }
+
+  .ctaOpen {
+    display: inline-flex;
+  }
+
+  .brandName {
+    font-size: 14px;
+  }
+}

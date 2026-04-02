@@ -1,0 +1,100 @@
+.section {
+  padding: 100px 0;
+  width: 100%;
+  text-align: center;
+  position: relative;
+  background-color: #fff;
+}
+
+/* Glow */
+.section::before {
+  content: "";
+  position: absolute;
+  width: 480px;
+  height: 480px;
+  background: linear-gradient(135deg, #EC2028, #F74A50);
+  filter: blur(180px);
+  opacity: 0.18;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: -1;
+}
+
+/* Header */
+.badge {
+  background: #ec2028;
+  color: white;
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.title {
+  margin: 16px 0;
+  font-size: 42px;
+  font-weight: 700;
+  color: #111827;
+}
+
+.gradient {
+  background: linear-gradient(135deg, #EC2028, #F74A50);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.subtext {
+  max-width: 600px;
+  margin: 0 auto;
+  color: #6b7280;
+  font-size: 18px;
+}
+
+/* Timeline Row */
+.timeline {
+  display: flex;
+  gap: 40px;
+  align-items: center;
+  justify-content: center;
+  margin-top: 60px;
+  flex-wrap: wrap;
+}
+
+/* Individual Card */
+.card {
+  position: relative;
+  text-align: center;
+}
+
+/* Image styling */
+.image {
+  width: 240px;
+  height: 320px;
+  object-fit: cover;
+  border-radius: 16px;
+  box-shadow: 0 18px 40px rgba(0,0,0,0.15);
+  transition: 0.3s ease;
+}
+
+.card:hover .image {
+  transform: translateY(-6px);
+  box-shadow: 0 26px 60px rgba(236,32,40,0.4);
+}
+
+/* Phase label */
+.label {
+  margin-top: 12px;
+  font-weight: 600;
+  font-size: 16px;
+  color: #111;
+}
+
+/* Connector line */
+.line {
+  width: 60px;
+  height: 4px;
+  background: #ec2028;
+  margin: 10px auto;
+  border-radius: 4px;
+}

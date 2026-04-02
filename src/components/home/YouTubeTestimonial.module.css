@@ -1,0 +1,269 @@
+/* ============================ CSS ============================ */
+:root {
+    --card-bg: #ffffff;
+    --muted: #6b7f85;
+    --accent: #ec2024;
+    --accent-2: #ec2024;
+    --radius: 14px;
+}
+
+.wrapper {
+    width: 100%;
+    background: var(--card-bg);
+    padding: 80px 0;
+}
+
+
+.testimonialheading{
+    text-align: center;
+    margin-bottom: 20px;
+    color: #ec2024;
+}
+
+.inner {
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: grid;
+    grid-template-columns: 52% 48%;
+    gap: 24px;
+}
+
+/* LEFT CLEAN GRID */
+.left {
+    position: relative;
+    border-radius: var(--radius);
+    overflow: hidden;
+}
+
+.grid4 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 8px;
+    width: 100%;
+    height: 100%;
+}
+
+.grid4 img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 12px;
+    box-shadow: 0 8px 22px rgba(0, 0, 0, 0.12);
+}
+
+/* Overlay text */
+.leftOverlay {
+    position: absolute;
+    left: 22px;
+    bottom: 22px;
+    z-index: 40;
+    max-width: 70%;
+
+    /* NEW — blurred transparent background for readability */
+    background: rgba(0, 0, 0, 0.35);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+
+    padding: 14px 18px;
+    border-radius: 14px;
+    box-shadow: 0 8px 26px rgba(0, 0, 0, 0.32);
+}
+
+.brand {
+    background: rgba(255, 255, 255, 0.18);
+    padding: 6px 10px;
+    border-radius: 8px;
+    font-weight: 800;
+    font-size: 13px;
+    display: inline-block;
+    color: #ec2024;
+}
+
+.head {
+    margin: 10px 0 6px 0;
+    font-size: 22px;
+    font-weight: 800;
+    color: #fff;
+}
+
+.lead {
+    font-size: 14px;
+    opacity: 0.95;
+}
+
+/* RIGHT SIDE */
+.right {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    /* Match the left collage height */
+    justify-content: center;
+}
+
+
+.cards {
+    display: grid;
+    /* Back to grid for 2 cards */
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    height: 100%;
+    /* NEW: Fill the full height */
+    align-items: stretch;
+}
+
+
+
+.card {
+    background: #fff;
+    border-radius: 12px;
+    border: 1px solid rgba(8, 20, 24, 0.06);
+    box-shadow: 0 12px 34px rgba(8, 20, 24, 0.06);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    /* NEW: force equal card heights */
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    /* NEW */
+}
+
+.mediaWrap {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    /* NEW: video becomes tall */
+    background: #000;
+    overflow: hidden;
+}
+
+
+.thumbBtn {
+    width: 100%;
+    height: 100%;
+    border: 0;
+    padding: 0;
+    background: transparent;
+    cursor: pointer;
+}
+
+.thumb {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.playBadge {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 56px;
+    height: 56px;
+    background: var(--accent-2);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.18);
+}
+
+.playSvg {
+    width: 34px;
+    height: 34px;
+    color: #fff;
+}
+
+.video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    /* makes the video tall and fills the card */
+    border: 0;
+    display: block;
+}
+
+
+.cardMeta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px;
+}
+
+.vTitle {
+    margin: 0;
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.vTime {
+    font-size: 12px;
+    color: var(--muted);
+}
+
+.clientThumb {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
+}
+
+.ctaRow {
+    display: flex;
+    gap: 12px;
+    margin-top: 10px;
+}
+
+.primary {
+    background: var(--accent);
+    color: #fff;
+    border: 0;
+    padding: 10px 14px;
+    border-radius: 10px;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.ghost {
+    background: transparent;
+    border: 1px solid rgba(8, 20, 24, 0.06);
+    padding: 10px 14px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+/* Responsive */
+@media(max-width:1100px) {
+    .inner {
+        grid-template-columns: 1fr;
+    }
+
+    .left {
+        order: 2;
+    }
+
+    .right {
+        order: 1;
+    }
+}
+
+@media(max-width:640px) {
+    .cards {
+        grid-template-columns: 1fr;
+    }
+
+    .head {
+        font-size: 20px;
+    }
+
+    .clientThumb {
+        width: 34px;
+        height: 34px;
+    }
+}
